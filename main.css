@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #ffd849;
+  overflow-y: hidden;
+}
+
+.banner-container__counter {
+  padding-top: 2.5%;
+  margin: auto;
+  width: 65%;
+}
+
+.banner-container__counter > :first-child {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 70%;
+  margin-right: 3.4%;
+}
+
+.banner-container__counter > :last-child {
+  width: 25%;
+}
+
+.banner-container__objects {
+  position: relative;
+  margin: 2.7% 4.1% auto 8.75%;
+}
+
+.banner-container__objects-nintendo {
+  margin-left: 2.8%;
+  width: 39.3%;
+}
+
+.banner-container__objects-pencil {
+  width: 29.3%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 6.2%;
+}
+
+.banner-container__objects-usb {
+  position: absolute;
+  width: 33.4%;
+}
+
+.banner-container__objects-pen {
+  position: absolute;
+  width: 24.6%;
+}
+/*# sourceMappingURL=main.css.map */
