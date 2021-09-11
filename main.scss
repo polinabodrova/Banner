@@ -3,3 +3,132 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 62.5%; //1 rem = 10px;
+}
+body {
+  overflow-y: hidden;
+}
+.banner {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+.banner-container {
+  background-color: #ffd849;
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  max-width: 50rem;
+  max-height: 83rem;
+  position: relative;
+  &__counter {
+    padding-top: 2rem;
+    margin: auto;
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > :first-child {
+      width: 70%;
+    }
+    > :last-child {
+      width: 25%;
+    }
+  }
+  .banner-container__objects {
+    position: relative;
+    top: 1rem;
+    // height: auto;
+    // height: 80%;
+    // width: 87%;
+    margin: 2.7% 4.1% 0 8.75%;
+    &-nintendo {
+      position: absolute;
+      // user-select: none;
+
+      // margin-left: 2.8%;
+      // margin-left: 1rem;
+      width: 50%;
+    }
+    &-pencil {
+      width: 33%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: 7.1%;
+    }
+    &-usb {
+      position: absolute;
+      width: 39%;
+      left: 5rem;
+      top: 12rem;
+    }
+    &-pen {
+      position: absolute;
+      width: 27%;
+      margin-top: -1rem;
+      top: 23rem;
+    }
+    &-notebook {
+      width: 41%;
+      position: absolute;
+      right: 0;
+      top: 15rem;
+    }
+  }
+  // &__backpack {
+  //   position: absolute;
+  //   width: 95%;
+  //   // min-width: 40%;
+  //   bottom: -20rem;
+  // }
+  &__bottom {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    bottom: -40%;
+    &-backpack {
+      position: absolute;
+    }
+    &-blick--top {
+      width: 50%;
+      position: absolute;
+      top: -8%;
+      left: 21%;
+    }
+    &-blick--right {
+      width: 50%;
+      position: absolute;
+      top: 22%;
+      left: 63%;
+    }
+    &-blick--left {
+      width: 50%;
+      position: absolute;
+      top: 28%;
+      left: -4%;
+    }
+  }
+  &__task {
+    position: absolute;
+    width: 65%;
+    bottom: 13%;
+    right: -25%;
+  }
+}
+
+// &__bottom {
+//   position: relative;
+//   height: 10rem;
+//   // bottom: 0;
+//   &-backpack {
+//     width: 85%;
+//     position: absolute;
+//     top: 7rem;
+//   }
+//   &-task {
+//     width: 75%;
+//     position: absolute;
+//   }
+// }

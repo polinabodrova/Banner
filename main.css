@@ -10,56 +10,128 @@ html {
 }
 
 body {
-  min-width: 100vw;
-  min-height: 100vh;
-  background-color: #ffd849;
   overflow-y: hidden;
 }
 
+.banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fff;
+}
+
+.banner-container {
+  background-color: #ffd849;
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  max-width: 50rem;
+  max-height: 83rem;
+  position: relative;
+}
+
 .banner-container__counter {
-  padding-top: 2.5%;
+  padding-top: 2rem;
   margin: auto;
   width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .banner-container__counter > :first-child {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   width: 70%;
-  margin-right: 3.4%;
 }
 
 .banner-container__counter > :last-child {
   width: 25%;
 }
 
-.banner-container__objects {
+.banner-container .banner-container__objects {
   position: relative;
-  margin: 2.7% 4.1% auto 8.75%;
+  top: 1rem;
+  margin: 2.7% 4.1% 0 8.75%;
 }
 
-.banner-container__objects-nintendo {
-  margin-left: 2.8%;
-  width: 39.3%;
+.banner-container .banner-container__objects-nintendo {
+  position: absolute;
+  width: 50%;
 }
 
-.banner-container__objects-pencil {
-  width: 29.3%;
+.banner-container .banner-container__objects-pencil {
+  width: 33%;
   position: absolute;
   top: 0;
   right: 0;
-  margin-right: 6.2%;
+  margin-right: 7.1%;
 }
 
-.banner-container__objects-usb {
+.banner-container .banner-container__objects-usb {
   position: absolute;
-  width: 33.4%;
+  width: 39%;
+  left: 5rem;
+  top: 12rem;
 }
 
-.banner-container__objects-pen {
+.banner-container .banner-container__objects-pen {
   position: absolute;
-  width: 24.6%;
+  width: 27%;
+  margin-top: -1rem;
+  top: 23rem;
+}
+
+.banner-container .banner-container__objects-notebook {
+  width: 41%;
+  position: absolute;
+  right: 0;
+  top: 15rem;
+}
+
+.banner-container__bottom {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  bottom: -40%;
+}
+
+.banner-container__bottom-backpack {
+  position: absolute;
+}
+
+.banner-container__bottom-blick--top {
+  width: 50%;
+  position: absolute;
+  top: -8%;
+  left: 21%;
+}
+
+.banner-container__bottom-blick--right {
+  width: 50%;
+  position: absolute;
+  top: 22%;
+  left: 63%;
+}
+
+.banner-container__bottom-blick--left {
+  width: 50%;
+  position: absolute;
+  top: 28%;
+  left: -4%;
+}
+
+.banner-container__task {
+  position: absolute;
+  width: 65%;
+  bottom: 13%;
+  right: -25%;
 }
 /*# sourceMappingURL=main.css.map */
