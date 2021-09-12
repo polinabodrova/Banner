@@ -1,30 +1,30 @@
 const counterContainer = document.querySelector(".banner-container__counter");
-const objectContainer = document.querySelector(".banner-container__objects");
 const objects = Array.from(document.querySelectorAll(".object"));
 const backpack = document.querySelector(".banner-container__bottom-backpack");
 const task = document.querySelector(".banner-container__task");
-const blicks = document.querySelectorAll(".blick");
-const nintendo = document.querySelector(".banner-container__objects-nintendo");
-const pencil = document.querySelector(".banner-container__objects-pencil");
-const usb = document.querySelector(".banner-container__objects-usb");
-const pen = document.querySelector(".banner-container__objects-pen");
-const notebook = document.querySelector(".banner-container__objects-notebook");
+const blicks = Array.from(document.querySelectorAll(".blick"));
 const countImg = document.querySelector(".countImg");
 const button = document.querySelector(".banner-container__button");
 const readytext = document.querySelector(".banner-container__readytext");
 let chosenObjects = [];
-let count = 0;
+function wait(sec) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, sec * 1000);
+  });
+}
+
 const initialAppearance = function () {
-  setTimeout(() => {
-    counterContainer.classList.remove("displayNone");
-    backpack.classList.remove("displayNone");
-    task.classList.remove("displayNone");
-    setTimeout(() => {
-      objects.forEach((el) => {
-        el.classList.remove("displayNone");
-      });
-    }, 700);
-  }, 1500);
+  wait(1.5)
+    .then(() => {
+      counterContainer.classList.remove("displayNone");
+      backpack.classList.remove("displayNone");
+      task.classList.remove("displayNone");
+      blicks.forEach((el) => el.classList.remove("displayNone"));
+      return wait(0.9);
+    })
+    .then(() => {
+      objects.forEach((el) => el.classList.remove("displayNone"));
+    });
 };
 initialAppearance();
 
@@ -46,6 +46,7 @@ function toggleObjects(e) {
       el.classList.add("displayNone");
       el.classList.remove("pickedObject");
     });
+    blicks.forEach((el) => el.classList.add("displayNone"));
     task.classList.add("displayNone");
     backpack.classList.add("backpackFinalMove");
 
@@ -62,11 +63,11 @@ function finalAnimation() {
   readytext.classList.remove("displayNone");
 }
 button.addEventListener("click", function () {
-  console.log("test");
   button.classList.add("displayNone");
   readytext.classList.add("displayNone");
   backpack.classList.remove("backpackFinalMove");
   backpack.classList.add("displayNone");
+  countImg.src = "./images/0.svg";
   chosenObjects = [];
   initialAppearance();
 });

@@ -10,11 +10,11 @@ html {
 }
 
 body {
-  overflow-y: hidden;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  background-color: #ffd849;
 }
 
 .banner {
@@ -24,22 +24,27 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #fff;
+}
+
+@media screen and (min-width: 700px) {
+  html {
+    font-size: 90%;
+  }
 }
 
 .banner-container {
-  background-color: #ffd849;
-  overflow-y: hidden;
   width: 100vw;
   height: 100vh;
   max-width: 50rem;
   max-height: 83rem;
   position: relative;
+  overflow-y: hidden;
 }
 
 .banner-container__counter {
   padding-top: 2rem;
   margin: auto;
+  height: 5%;
   width: 65%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,8 +55,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: fadeIn 0.5s;
-          animation: fadeIn 0.5s;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
 }
 
 .banner-container__counter > :first-child {
@@ -62,20 +67,30 @@ body {
   width: 25%;
 }
 
-.banner-container .banner-container__objects {
+.banner-container__readytext {
+  position: absolute;
+  width: 70%;
+  top: 7%;
+  width: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.banner-container__objects {
   position: relative;
-  top: 1rem;
+  top: 2rem;
   margin: 2.7% 4.1% 0 8.75%;
 }
 
-.banner-container .banner-container__objects-nintendo {
+.banner-container__objects-nintendo {
   position: absolute;
   width: 50%;
   -webkit-animation: objectAppear 1s;
           animation: objectAppear 1s;
 }
 
-.banner-container .banner-container__objects-pencil {
+.banner-container__objects-pencil {
   width: 33%;
   position: absolute;
   top: 0;
@@ -85,16 +100,17 @@ body {
           animation: objectAppear 1.1s;
 }
 
-.banner-container .banner-container__objects-notebook {
+.banner-container__objects-notebook {
   width: 41%;
   position: absolute;
   right: 0;
   top: 15rem;
   -webkit-animation: objectAppear 1.2s;
           animation: objectAppear 1.2s;
+  z-index: 2;
 }
 
-.banner-container .banner-container__objects-usb {
+.banner-container__objects-usb {
   position: absolute;
   width: 39%;
   left: 5rem;
@@ -103,13 +119,14 @@ body {
           animation: objectAppear 1.3s;
 }
 
-.banner-container .banner-container__objects-pen {
+.banner-container__objects-pen {
   position: absolute;
   width: 27%;
   margin-top: -1rem;
   top: 23rem;
   -webkit-animation: objectAppear 1.4s;
           animation: objectAppear 1.4s;
+  z-index: 2;
 }
 
 .banner-container__bottom {
@@ -120,33 +137,33 @@ body {
 
 .banner-container__bottom-backpack {
   position: absolute;
-  -webkit-animation: backpackAppear 2s;
-          animation: backpackAppear 2s;
+  -webkit-animation: backpackAppear 1.5s;
+          animation: backpackAppear 1.5s;
 }
 
 .banner-container__bottom-blick--top {
-  width: 50%;
+  width: 35%;
   position: absolute;
-  top: -8%;
-  left: 21%;
+  top: -4%;
+  left: 29%;
   -webkit-animation: blickAppear 2.1s;
           animation: blickAppear 2.1s;
 }
 
 .banner-container__bottom-blick--right {
-  width: 50%;
+  width: 40%;
   position: absolute;
-  top: 22%;
-  left: 63%;
+  top: 25%;
+  left: 66%;
   -webkit-animation: blickAppear 2.2s;
           animation: blickAppear 2.2s;
 }
 
 .banner-container__bottom-blick--left {
-  width: 50%;
+  width: 40%;
   position: absolute;
   top: 30%;
-  left: -3%;
+  left: 2%;
   -webkit-animation: blickAppear 2.3s;
           animation: blickAppear 2.3s;
 }
@@ -189,28 +206,28 @@ body {
 
 @-webkit-keyframes backpackAppear {
   0% {
-    opacity: 0.5;
-    -webkit-transform: translateY(-30rem) scale(1.5);
-            transform: translateY(-30rem) scale(1.5);
+    opacity: 0.3;
+    -webkit-transform: translateY(-25rem) scale(1.5);
+            transform: translateY(-25rem) scale(1.5);
   }
   15% {
-    opacity: 0.9;
-    -webkit-transform: translateY(-30rem) scale(1.5);
-            transform: translateY(-30rem) scale(1.5);
+    opacity: 0.5;
+    -webkit-transform: translateY(-25rem) scale(1.5);
+            transform: translateY(-25rem) scale(1.5);
   }
   30% {
-    opacity: 1;
-    -webkit-transform: translateY(-30rem) scale(0.8);
-            transform: translateY(-30rem) scale(0.8);
+    -webkit-transform: translateY(-25rem) scale(0.8);
+            transform: translateY(-25rem) scale(0.8);
   }
   40% {
-    -webkit-transform: translateY(-30rem) scale(1.1);
-            transform: translateY(-30rem) scale(1.1);
+    opacity: 1;
+    -webkit-transform: translateY(-25rem) scale(1.1);
+            transform: translateY(-25rem) scale(1.1);
   }
   50%,
   60% {
-    -webkit-transform: translateY(-30rem) scale(1);
-            transform: translateY(-30rem) scale(1);
+    -webkit-transform: translateY(-25rem) scale(1);
+            transform: translateY(-25rem) scale(1);
   }
   100% {
     -webkit-transform: translateY(0) scale(1);
@@ -220,28 +237,28 @@ body {
 
 @keyframes backpackAppear {
   0% {
-    opacity: 0.5;
-    -webkit-transform: translateY(-30rem) scale(1.5);
-            transform: translateY(-30rem) scale(1.5);
+    opacity: 0.3;
+    -webkit-transform: translateY(-25rem) scale(1.5);
+            transform: translateY(-25rem) scale(1.5);
   }
   15% {
-    opacity: 0.9;
-    -webkit-transform: translateY(-30rem) scale(1.5);
-            transform: translateY(-30rem) scale(1.5);
+    opacity: 0.5;
+    -webkit-transform: translateY(-25rem) scale(1.5);
+            transform: translateY(-25rem) scale(1.5);
   }
   30% {
-    opacity: 1;
-    -webkit-transform: translateY(-30rem) scale(0.8);
-            transform: translateY(-30rem) scale(0.8);
+    -webkit-transform: translateY(-25rem) scale(0.8);
+            transform: translateY(-25rem) scale(0.8);
   }
   40% {
-    -webkit-transform: translateY(-30rem) scale(1.1);
-            transform: translateY(-30rem) scale(1.1);
+    opacity: 1;
+    -webkit-transform: translateY(-25rem) scale(1.1);
+            transform: translateY(-25rem) scale(1.1);
   }
   50%,
   60% {
-    -webkit-transform: translateY(-30rem) scale(1);
-            transform: translateY(-30rem) scale(1);
+    -webkit-transform: translateY(-25rem) scale(1);
+            transform: translateY(-25rem) scale(1);
   }
   100% {
     -webkit-transform: translateY(0) scale(1);
@@ -392,9 +409,5 @@ body {
 
 .displayNone {
   display: none;
-}
-
-.visibilityHidden {
-  visibility: hidden;
 }
 /*# sourceMappingURL=main.css.map */
