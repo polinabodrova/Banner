@@ -124,14 +124,14 @@ body {
   &__task {
     position: absolute;
     width: 65%;
-    bottom: 13%;
+    bottom: 15%;
     right: -25%;
     animation: taskAppear 2s;
   }
   &__button {
     position: absolute;
     bottom: 2%;
-    width: 55%;
+    width: 52%;
     left: 50%;
     animation: buttonMove 1.5s forwards;
   }
@@ -143,6 +143,30 @@ body {
   100% {
     opacity: 1;
   }
+}
+@keyframes fadeOutObjects {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOutObjects {
+  animation: fadeOutObjects 0.5s;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s;
 }
 
 @keyframes backpackAppear {
@@ -221,7 +245,7 @@ body {
     transform: rotate(0);
   }
   100% {
-    transform: rotate(10deg) translateY(-3rem) translateX(-7.2rem);
+    transform: rotate(10deg) translateY(-3rem) translateX(-5rem);
     transform-origin: bottom right;
   }
 }
@@ -246,6 +270,9 @@ body {
 .displayNone {
   display: none;
 }
+.hidden {
+  visibility: hidden;
+}
 
 @media screen and (max-width: 900px) {
   html {
@@ -256,9 +283,6 @@ body {
   }
   .banner-container__objects {
     top: 3.5rem;
-  }
-  .banner-container__bottom-backpack {
-    width: 110%;
   }
 }
 ////

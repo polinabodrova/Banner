@@ -171,7 +171,7 @@ body {
 .banner-container__task {
   position: absolute;
   width: 65%;
-  bottom: 13%;
+  bottom: 15%;
   right: -25%;
   -webkit-animation: taskAppear 2s;
           animation: taskAppear 2s;
@@ -180,7 +180,7 @@ body {
 .banner-container__button {
   position: absolute;
   bottom: 2%;
-  width: 55%;
+  width: 52%;
   left: 50%;
   -webkit-animation: buttonMove 1.5s forwards;
           animation: buttonMove 1.5s forwards;
@@ -202,6 +202,52 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+@-webkit-keyframes fadeOutObjects {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutObjects {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOutObjects {
+  -webkit-animation: fadeOutObjects 0.5s;
+          animation: fadeOutObjects 0.5s;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut 0.5s;
+          animation: fadeOut 0.5s;
 }
 
 @-webkit-keyframes backpackAppear {
@@ -382,8 +428,8 @@ body {
             transform: rotate(0);
   }
   100% {
-    -webkit-transform: rotate(10deg) translateY(-3rem) translateX(-7.2rem);
-            transform: rotate(10deg) translateY(-3rem) translateX(-7.2rem);
+    -webkit-transform: rotate(10deg) translateY(-3rem) translateX(-5rem);
+            transform: rotate(10deg) translateY(-3rem) translateX(-5rem);
     -webkit-transform-origin: bottom right;
             transform-origin: bottom right;
   }
@@ -395,8 +441,8 @@ body {
             transform: rotate(0);
   }
   100% {
-    -webkit-transform: rotate(10deg) translateY(-3rem) translateX(-7.2rem);
-            transform: rotate(10deg) translateY(-3rem) translateX(-7.2rem);
+    -webkit-transform: rotate(10deg) translateY(-3rem) translateX(-5rem);
+            transform: rotate(10deg) translateY(-3rem) translateX(-5rem);
     -webkit-transform-origin: bottom right;
             transform-origin: bottom right;
   }
@@ -443,6 +489,10 @@ body {
   display: none;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 900px) {
   html {
     font-size: 50%;
@@ -452,9 +502,6 @@ body {
   }
   .banner-container__objects {
     top: 3.5rem;
-  }
-  .banner-container__bottom-backpack {
-    width: 110%;
   }
 }
 

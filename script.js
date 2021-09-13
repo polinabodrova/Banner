@@ -43,13 +43,22 @@ function toggleObjects(e) {
     counter();
   }
   if (chosenObjects.length === 5) {
-    counterContainer.classList.add("displayNone");
-    objects.forEach((el) => {
-      el.classList.add("displayNone");
-      el.classList.remove("pickedObject");
-    });
+    wait(0.3)
+      .then(() => {
+        objects.forEach((el) => {
+          el.classList.add("fadeOutObjects");
+          el.classList.remove("pickedObject");
+        });
+        counterContainer.classList.add("fadeOut");
+        task.classList.add("fadeOut");
+        return wait(0.5);
+      })
+      .then(() => {
+        objects.forEach((el) => el.classList.add("displayNone"));
+        counterContainer.classList.add("hidden");
+        task.classList.add("displayNone");
+      });
     blicks.forEach((el) => el.classList.add("displayNone"));
-    task.classList.add("displayNone");
     backpack.classList.add("backpackFinalMove");
     finalAnimation();
   }
@@ -61,7 +70,9 @@ function counter() {
 
 function finalAnimation() {
   button.classList.remove("displayNone");
-  readytext.classList.remove("displayNone");
+  wait(0.6).then(() => {
+    readytext.classList.remove("displayNone");
+  });
 }
 
 function playAgain() {
@@ -69,6 +80,8 @@ function playAgain() {
   readytext.classList.add("displayNone");
   backpack.classList.remove("backpackFinalMove");
   backpack.classList.add("displayNone");
+  counterContainer.classList.remove("hidden");
+  objects.forEach((el) => el.classList.remove("fadeOutObjects"));
   countImg.src = "./images/0.png";
   chosenObjects = [];
   initialAppearance();
