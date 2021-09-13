@@ -7,28 +7,31 @@ const countImg = document.querySelector(".countImg");
 const button = document.querySelector(".banner-container__button");
 const readytext = document.querySelector(".banner-container__readytext");
 let chosenObjects = [];
+
+//Waiting for the pics to load
+function firstLoad() {
+  initialAppearance();
+}
+//promisifying settimeout
 function wait(sec) {
   return new Promise((resolve) => {
     setTimeout(resolve, sec * 1000);
   });
 }
 
-const initialAppearance = function () {
-  wait(1.5)
+function initialAppearance() {
+  wait(0.5)
     .then(() => {
       counterContainer.classList.remove("displayNone");
       backpack.classList.remove("displayNone");
       task.classList.remove("displayNone");
-      blicks.forEach((el) => el.classList.remove("displayNone"));
       return wait(0.9);
     })
     .then(() => {
       objects.forEach((el) => el.classList.remove("displayNone"));
+      blicks.forEach((el) => el.classList.remove("displayNone"));
     });
-};
-initialAppearance();
-
-objects.forEach((el) => el.addEventListener("click", toggleObjects));
+}
 
 function toggleObjects(e) {
   e.target.classList.toggle("pickedObject");
@@ -37,7 +40,6 @@ function toggleObjects(e) {
     counter();
   } else {
     chosenObjects.splice(chosenObjects.indexOf(e.target), 1);
-    // console.log(chosenObjects);
     counter();
   }
   if (chosenObjects.length === 5) {
@@ -49,25 +51,29 @@ function toggleObjects(e) {
     blicks.forEach((el) => el.classList.add("displayNone"));
     task.classList.add("displayNone");
     backpack.classList.add("backpackFinalMove");
-
     finalAnimation();
   }
 }
 
-const counter = function () {
-  countImg.src = `./images/${chosenObjects.length}.svg`;
-};
+function counter() {
+  countImg.src = `./images/${chosenObjects.length}.png`;
+}
 
 function finalAnimation() {
   button.classList.remove("displayNone");
   readytext.classList.remove("displayNone");
 }
-button.addEventListener("click", function () {
+
+function playAgain() {
   button.classList.add("displayNone");
   readytext.classList.add("displayNone");
   backpack.classList.remove("backpackFinalMove");
   backpack.classList.add("displayNone");
-  countImg.src = "./images/0.svg";
+  countImg.src = "./images/0.png";
   chosenObjects = [];
   initialAppearance();
-});
+}
+
+window.addEventListener("load", firstLoad);
+objects.forEach((el) => el.addEventListener("click", toggleObjects));
+button.addEventListener("click", playAgain);
