@@ -8,7 +8,6 @@ html {
 }
 body {
   user-select: none;
-  // background-color: #ffd849;
 }
 .banner {
   display: flex;
@@ -19,7 +18,6 @@ body {
   width: 100vw;
   max-width: 50rem;
   height: 100vh;
-  // min-height: 80rem;
   position: relative;
   overflow: hidden;
   &__counter {
@@ -89,7 +87,6 @@ body {
   }
   &__bottom {
     position: relative;
-    // width: 100%;
     height: 100%;
     bottom: -40%;
     &-backpack {
@@ -204,7 +201,9 @@ body {
   }
 }
 @keyframes blickAppear {
-  0%,
+  0% {
+    opacity: 0;
+  }
   90% {
     opacity: 0;
   }
@@ -217,8 +216,7 @@ body {
     transform: rotate(0);
   }
   100% {
-    // transform: rotate(10deg) translateY(-5rem) translateX(-5.5rem);
-    transform: rotate(10deg) translateY(15%) translateX(-8%);
+    transform: rotate(10deg) translateY(-5rem) translateX(-5.5rem);
     transform-origin: bottom right;
   }
 }
@@ -244,7 +242,7 @@ body {
   }
   .banner-container__objects {
     top: 3.5rem;
-    margin: 2.7% 4.1% 6% 8.75%;
+    // margin: 2.7% 4.1% 6% 8.75%;
   }
 }
 ////
