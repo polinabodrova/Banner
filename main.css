@@ -160,7 +160,7 @@ body {
 .banner-container__bottom-blick--left {
   width: 35%;
   position: absolute;
-  top: 37%;
+  top: 29%;
   left: 2%;
   -webkit-animation: blickAppear 1.2s;
           animation: blickAppear 1.2s;
@@ -186,6 +186,38 @@ body {
           animation: buttonMove 1.5s forwards;
 }
 
+.backpackFinalMove {
+  -webkit-animation: backpackFinalMoveAnim 0.7s forwards;
+          animation: backpackFinalMoveAnim 0.7s forwards;
+}
+
+.fadeIn {
+  -webkit-animation: fadIn 3s;
+          animation: fadIn 3s;
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut 1s;
+          animation: fadeOut 1s;
+}
+
+.fadeOutObjects {
+  -webkit-animation: fadeOutObjects 1s;
+          animation: fadeOutObjects 1s;
+}
+
+.pickedObject {
+  opacity: 0.2;
+}
+
+.displayNone {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -202,34 +234,6 @@ body {
   100% {
     opacity: 1;
   }
-}
-
-.fadeIn {
-  -webkit-animation: fadIn 3s;
-          animation: fadIn 3s;
-}
-
-@-webkit-keyframes fadeOutObjects {
-  0% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes fadeOutObjects {
-  0% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.fadeOutObjects {
-  -webkit-animation: fadeOutObjects 1s;
-          animation: fadeOutObjects 1s;
 }
 
 @-webkit-keyframes fadeOut {
@@ -250,9 +254,22 @@ body {
   }
 }
 
-.fadeOut {
-  -webkit-animation: fadeOut 1s;
-          animation: fadeOut 1s;
+@-webkit-keyframes fadeOutObjects {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutObjects {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @-webkit-keyframes backpackAppear {
@@ -477,47 +494,55 @@ body {
   }
 }
 
-.backpackFinalMove {
-  -webkit-animation: backpackFinalMoveAnim 1.5s forwards;
-          animation: backpackFinalMoveAnim 1.5s forwards;
-}
-
-.pickedObject {
-  opacity: 0.2;
-}
-
-.displayNone {
-  display: none;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 750px) {
   html {
-    font-size: 50%;
-  }
-  .banner-container {
-    max-width: 42rem;
-  }
-  .banner-container__objects {
-    top: 3.5rem;
+    font-size: 60%;
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1000px) {
   html {
-    font-size: 56.25%;
-  }
-  .banner-container {
-    max-width: 62rem;
+    font-size: 70%;
   }
 }
 
-@media screen and (min-width: 1800px) {
+@media screen and (max-height: 800px) {
   html {
-    font-size: 75%;
+    font-size: 40%;
+  }
+}
+
+@media screen and (min-height: 812px) and (min-width: 375px) {
+  .banner-container__bottom-blick--right {
+    top: 20%;
+    left: 68%;
+  }
+  .banner-container__bottom-blick--left {
+    top: 25%;
+    left: 3%;
+  }
+}
+
+@media screen and (min-height: 1366px) and (min-width: 1024px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media screen and (max-height: 500px) and (max-width: 850px) {
+  html {
+    font-size: 30%;
+  }
+}
+
+@media screen and (min-width: 415px) and (min-height: 730px) {
+  .banner-container__bottom-blick--right {
+    top: 25%;
+    left: 68%;
+  }
+  .banner-container__bottom-blick--left {
+    top: 28%;
+    left: 3%;
   }
 }
 /*# sourceMappingURL=main.css.map */

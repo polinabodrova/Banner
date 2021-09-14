@@ -47,8 +47,6 @@ body {
   }
   &__objects {
     position: relative;
-    // padding-top: 10rem;
-    // margin: 2.7% 4.1% 0 8.75%;
     margin: 2rem 1.5rem 2.5rem 1.5rem;
     &-nintendo {
       position: absolute;
@@ -115,7 +113,7 @@ body {
     &-blick--left {
       width: 35%;
       position: absolute;
-      top: 37%;
+      top: 29%;
       left: 2%;
       animation: blickAppear 1.2s;
       animation-iteration-count: infinite;
@@ -136,6 +134,30 @@ body {
     animation: buttonMove 1.5s forwards;
   }
 }
+
+.backpackFinalMove {
+  animation: backpackFinalMoveAnim 0.7s forwards;
+}
+.fadeIn {
+  animation: fadIn 3s;
+}
+.fadeOut {
+  animation: fadeOut 1s;
+}
+.fadeOutObjects {
+  animation: fadeOutObjects 1s;
+}
+.pickedObject {
+  opacity: 0.2;
+}
+.displayNone {
+  display: none;
+}
+.hidden {
+  visibility: hidden;
+}
+
+//keyframes
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -143,21 +165,6 @@ body {
   100% {
     opacity: 1;
   }
-}
-.fadeIn {
-  animation: fadIn 3s;
-}
-@keyframes fadeOutObjects {
-  0% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.fadeOutObjects {
-  animation: fadeOutObjects 1s;
 }
 @keyframes fadeOut {
   0% {
@@ -167,11 +174,14 @@ body {
     opacity: 0;
   }
 }
-
-.fadeOut {
-  animation: fadeOut 1s;
+@keyframes fadeOutObjects {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-
 @keyframes backpackAppear {
   0% {
     opacity: 0;
@@ -250,7 +260,6 @@ body {
     transform-origin: bottom right;
   }
 }
-
 @keyframes buttonMove {
   0%,
   80% {
@@ -262,43 +271,55 @@ body {
     transform: translateY(-10rem) translateX(-50%);
   }
 }
-.backpackFinalMove {
-  animation: backpackFinalMoveAnim 1.5s forwards;
-}
-.pickedObject {
-  opacity: 0.2;
-}
-.displayNone {
-  display: none;
-}
-.hidden {
-  visibility: hidden;
+//media queries
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 60%;
+  }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 1000px) {
   html {
-    font-size: 50%; //1 rem = 8px;
-  }
-  .banner-container {
-    max-width: 42rem;
-  }
-  .banner-container__objects {
-    top: 3.5rem;
+    font-size: 70%;
   }
 }
-////
-@media screen and (max-width: 1200px) {
+
+@media screen and (max-height: 800px) {
   html {
-    font-size: 56.25%; //1 rem = 9px;
-  }
-  .banner-container {
-    max-width: 62rem;
+    font-size: 40%;
   }
 }
-/////
-@media screen and (min-width: 1800px) {
-  html {
-    font-size: 75%; //1 rem = 12px;
+
+@media screen and (min-height: 812px) and (min-width: 375px) {
+  .banner-container__bottom-blick--right {
+    top: 20%;
+    left: 68%;
+  }
+  .banner-container__bottom-blick--left {
+    top: 25%;
+    left: 3%;
   }
 }
-/////
+
+@media screen and (min-height: 1366px) and (min-width: 1024px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media screen and (max-height: 500px) and (max-width: 850px) {
+  html {
+    font-size: 30%;
+  }
+}
+
+@media screen and (min-width: 415px) and (min-height: 730px) {
+  .banner-container__bottom-blick--right {
+    top: 25%;
+    left: 68%;
+  }
+  .banner-container__bottom-blick--left {
+    top: 28%;
+    left: 3%;
+  }
+}
