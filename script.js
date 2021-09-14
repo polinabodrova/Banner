@@ -43,7 +43,7 @@ function toggleObjects(e) {
     counter();
   }
   if (chosenObjects.length === 5) {
-    wait(0.3)
+    wait(0.1)
       .then(() => {
         objects.forEach((el) => {
           el.classList.add("fadeOutObjects");
@@ -70,8 +70,9 @@ function counter() {
 
 function finalAnimation() {
   button.classList.remove("displayNone");
-  wait(0.6).then(() => {
+  wait(1).then(() => {
     readytext.classList.remove("displayNone");
+    readytext.classList.add("fadeIn");
   });
 }
 
@@ -82,6 +83,8 @@ function playAgain() {
   backpack.classList.add("displayNone");
   counterContainer.classList.remove("hidden");
   objects.forEach((el) => el.classList.remove("fadeOutObjects"));
+  task.classList.remove("fadeOut");
+  counterContainer.classList.remove("fadeOut");
   countImg.src = "./images/0.png";
   chosenObjects = [];
   initialAppearance();
